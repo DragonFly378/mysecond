@@ -1,0 +1,296 @@
+
+
+ /* ini stylenya gais */
+ @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Work Sans', sans-serif;
+	color:rgb(255, 255, 255);
+	background-color:rgb(255, 255, 255);
+	background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+ }
+
+nav{
+    font-size: 18px;
+	text-decoration: none;
+	background-color: rgb(0, 0, 0);
+    padding-right: 25px;
+    padding-bottom: 10px;
+	position: sticky;
+    top: 0;
+    z-index: 9999;
+    
+}
+
+nav li {
+	display: inline;
+    padding: 2px;
+    color: aliceblue;
+    transition: 0.3s;
+}
+
+
+nav li.kiri{
+    float: left;
+    position: relative;
+}
+
+nav li.nav-kiri{
+    position: absolute;
+    padding-top: 10px;
+}
+
+nav li.kanan{
+    margin-top: 15px;
+    float: right;
+    padding-right: 10px;
+}
+
+nav li.icon{
+    display: none;
+}
+ /* rule akan diterapkan pada sebuah tautan yang sudah pernah dikunjungi */
+ a:visited {
+	color: rgb(255, 255, 255);
+ }
+ /* rule akan diterapkan pada sebuah tautan ketika diarahkan dengan kursor */
+ a:hover {
+	color: hotpink;
+	font-weight: bold;
+ }
+ /* rule akan diterapkan pada sebuah tautan ketika ditekan */
+ a:active {
+	color:orange;
+ }
+ a:link {
+	color: white;
+ }
+
+
+.jumbotron{
+    height: 400px;
+	font-size: 20px;
+    padding: 100px;
+    background: url('gambar1.png');
+    background-size: 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: white;
+}
+
+header .judul{
+    margin-top: -60px;
+	font-size: 40px;
+	font-weight: bold;
+    padding-bottom: 10px;
+    color: rgb(153, 212, 252);
+}
+header{
+    display: inline;
+}
+
+h2{
+    text-align: center;
+}
+
+.paragraf1{
+	text-indent: 10px;
+}
+
+.awal-paragraf::first-letter {
+		font-size: 32px;
+		font-weight: bold;
+		color: lightcoral;
+    }
+    
+main{
+	padding: 20px;
+	overflow: auto;
+}
+
+.card{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	padding: 20px;
+    margin-top: 20px;
+    background-color: rgb(107, 123, 175);
+    opacity: 0;
+    transform: translate(0, -40px);
+}
+
+.card2{
+    width: 25%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    text-align: center;
+    color: #000000;
+    
+}
+
+
+.kegiatan img{
+    display: inline-block;
+    width: 90%;
+    padding-top: 15px;
+}
+
+.card2 p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.konten {
+	float: left;
+    width: 75%;
+   
+}
+.muncul{
+    opacity: 1;
+    transform: translate(0,0);
+    transition: 1s;
+}
+
+p{
+    font-weight: 500;
+    text-align: justify;
+}
+
+
+
+.profil header{
+    text-align: center;
+}
+
+aside {
+	float: right;
+	padding: 20px;
+	width: 23%;
+}
+
+footer .artikel {
+	text-align: center;
+	padding: 20px;
+	color: white;
+	background-color: #000000;
+	font-weight: bold;
+}
+
+/* Tombol Kembali Keatas */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  #myBtn:hover {
+    background-color: rgb(9, 108, 255);
+  }
+
+
+
+
+
+/* MEDIA JQUERY */
+@media screen and (max-width: 680px) {
+	.konten{
+		width: 100%;
+		padding: 0;
+	}
+	aside {
+		width: 100%;
+		padding: 0;
+    }
+    .card2{
+		width:80%;
+        padding: 20px;
+        display: inline-block;
+      
+    }
+    .jumbotron{
+        width: 100%;
+        text-align: center;
+        background-size: 100%;
+        background-position: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+/* Saat lebar layar kurang dari 680 pixel, sembunyikan semua menu item kecuali item yang pertama yaitu("Home"). Tampilkan juga list item yang berisi link untuk membuka menu yaitu (li.icon) */
+
+    ul.topnav li.kanan:not(:first-child) {display: none;}
+    ul.topnav li.icon {
+        margin-top: 15px;
+      float: right;
+      display: inline-block;
+    }
+    nav{
+        position: sticky;
+        top: 0;
+    }
+  }
+  
+  /* Class dengan nama "responsive" akan ditambahkan oleh JavaScript saat user mengklik icon. Munculnya Class ini akan mendisplay isi list menu 
+  */
+  @media screen and (max-width:1000px) {
+    ul.topnav.responsive {position: relative;}
+    ul.topnav.responsive li.icon {
+      right: 0;
+      top: 0;
+      margin-top: 10px;
+    }
+    ul.topnav.responsive li.kanan {
+      float: none;
+      display: inline;
+    }
+    ul.topnav.responsive li.nav-kiri {
+        float: none;
+        display: none;
+      }
+
+    ul.topnav.responsive li.kanan a {
+        display: block;
+        text-align: right;
+      }
+  }
+/* clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
